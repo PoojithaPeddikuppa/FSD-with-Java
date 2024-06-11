@@ -1,0 +1,5 @@
+package com.pace.product.bean;
+
+public class Product {
+
+}

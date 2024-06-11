@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+</head>
+<body>
+<form action="ServletOne">  
+    <label for="username"><b>Username</b></label> 
+    <input type="text" placeholder="Enter Username" name="username" required>
+    <br>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    <br>                         
+  
+      <input type="submit"  value="SignIn" >
+  
+  </form>
+</body>
+</html>

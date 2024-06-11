@@ -1,0 +1,53 @@
+package com.pace.library.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.pace.library.bean.Book;
+import com.pace.library.dao.BookDAO;
+
+/**
+ * Servlet implementation class BookInsertServlet
+ */
+public class BookInsertServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public BookInsertServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		BookDAO bookDao = new BookDAO();
+		Book book = new Book();
+		int rows = 0;
+		int id;
+		String name, author;
+		float price;
+	id = Integer.parseInt(request.getParameter("id"));
+	name = request.getParameter("name");
+	author = request.getParameter("author");
+	price =Float.parseFloat (request.getParameter("price"));
+	book.setBookId(id);
+	book.setBname(name);
+	book.setAuthor(author);
+	book.setPrice(price);
+	System.out.println(book.getBname());
+	try {
+		
+	}
+
+	
+
+}
+}

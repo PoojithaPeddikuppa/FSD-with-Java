@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+</head>
+<body>
+<form action="SessionServlet">
+<label for="username"><b></Username></b></label>
+<input type="text" placeholder="Enter Username" name="username"
+required>
+<br>
+<label for="emailid"><b>Email Id</b></label>
+<input type="text" placeholder="Enter Email Id" name="emailid"
+required>
+<br>
+<input type="submit"value="SignIn">
+
+</label></form>
+
+</body>
+</html>

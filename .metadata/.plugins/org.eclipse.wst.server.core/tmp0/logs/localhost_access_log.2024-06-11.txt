@@ -1,0 +1,6 @@
+127.0.0.1 - - [11/Jun/2024:09:24:59 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [11/Jun/2024:09:25:03 +0530] "GET /RequestDispatcherApp/ HTTP/1.1" 200 396
+0:0:0:0:0:0:0:1 - - [11/Jun/2024:09:25:04 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [11/Jun/2024:09:25:10 +0530] "GET /RequestDispatcherApp/ServletOne?username=kk&password=kl HTTP/1.1" 500 3375
+0:0:0:0:0:0:0:1 - - [11/Jun/2024:11:07:42 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [11/Jun/2024:12:05:52 +0530] "GET /favicon.ico HTTP/1.1" 404 762

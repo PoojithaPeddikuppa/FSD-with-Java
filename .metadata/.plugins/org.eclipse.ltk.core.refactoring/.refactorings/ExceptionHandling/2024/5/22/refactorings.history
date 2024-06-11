@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;ArithmeticException.java&apos; to &apos;ArithmeticExceptionDemo.java&apos;&#x0D;&#x0A;- Original project: &apos;ExceptionHandling&apos;&#x0D;&#x0A;- Original element: &apos;ArithmeticException.java&apos;&#x0D;&#x0A;- Renamed element: &apos;ArithmeticExceptionDemo.java&apos;" description="Rename compilation unit &apos;ArithmeticException.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{ArithmeticException.java" name="ArithmeticExceptionDemo.java" references="false" stamp="1716870432535" version="1.0"/>
+</session>

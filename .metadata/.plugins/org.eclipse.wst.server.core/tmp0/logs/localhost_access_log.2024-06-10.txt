@@ -1,0 +1,9 @@
+127.0.0.1 - - [10/Jun/2024:11:44:18 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [10/Jun/2024:11:44:22 +0530] "GET /Spring_Mvc-_LoginApp/index.html HTTP/1.1" 404 786
+0:0:0:0:0:0:0:1 - - [10/Jun/2024:11:44:22 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [10/Jun/2024:11:44:26 +0530] "GET /Spring_Mvc-_LoginApp/index.html HTTP/1.1" 404 786
+0:0:0:0:0:0:0:1 - - [10/Jun/2024:11:44:27 +0530] "GET /Spring_Mvc-_LoginApp/index.html HTTP/1.1" 404 786
+0:0:0:0:0:0:0:1 - - [10/Jun/2024:11:44:27 +0530] "GET /Spring_Mvc-_LoginApp/index.html HTTP/1.1" 404 786
+127.0.0.1 - - [10/Jun/2024:20:25:00 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [10/Jun/2024:20:25:01 +0530] "GET /RequestDispatcherApp/ HTTP/1.1" 404 776
+0:0:0:0:0:0:0:1 - - [10/Jun/2024:20:25:01 +0530] "GET /favicon.ico HTTP/1.1" 404 762

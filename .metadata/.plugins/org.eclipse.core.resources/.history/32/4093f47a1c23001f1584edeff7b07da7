@@ -1,0 +1,9 @@
+package com.pace.bean;
+public class User {
+	String username,emailid;
+	public User(String username, String emailid) {
+		super();
+		
+	}
+
+}

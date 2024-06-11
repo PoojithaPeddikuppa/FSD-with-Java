@@ -1,0 +1,5 @@
+package com.pace.library.dao;
+
+public class BookDao {
+
+}

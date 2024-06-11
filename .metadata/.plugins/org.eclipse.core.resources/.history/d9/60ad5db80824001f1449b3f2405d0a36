@@ -1,0 +1,15 @@
+class Trainee extends Employee {
+    double travelAllowance;
+
+    public Trainee(long employeeId, String employeeName, String employeeAddress,
+                   long employeePhone, double basicSalary) {
+        super(employeeId, employeeName, employeeAddress, employeePhone, basicSalary);
+        travelAllowance = 0.10 * basicSalary;
+    }
+
+
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Travel Allowance: Rs. " + travelAllowance);
+    }
+}

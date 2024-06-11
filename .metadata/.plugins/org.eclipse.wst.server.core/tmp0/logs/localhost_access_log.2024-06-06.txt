@@ -1,0 +1,8 @@
+127.0.0.1 - - [06/Jun/2024:15:03:32 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [06/Jun/2024:15:03:35 +0530] "GET /WebLayeredArchitecture/BookInsertServlet HTTP/1.1" 500 1425
+0:0:0:0:0:0:0:1 - - [06/Jun/2024:15:03:36 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+127.0.0.1 - - [06/Jun/2024:15:24:08 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [06/Jun/2024:15:24:09 +0530] "GET /WebLayeredArchitecture/ HTTP/1.1" 200 427
+0:0:0:0:0:0:0:1 - - [06/Jun/2024:15:24:16 +0530] "GET /WebLayeredArchitecture/BookServlet HTTP/1.1" 500 1502
+127.0.0.1 - - [06/Jun/2024:15:32:16 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [06/Jun/2024:15:32:20 +0530] "GET /WebLayeredArchitecture/BookServlet HTTP/1.1" 500 1502

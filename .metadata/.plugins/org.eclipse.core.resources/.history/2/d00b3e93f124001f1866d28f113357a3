@@ -1,0 +1,162 @@
+package com.pace.library.dao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import com.pace.library.entity.Book;
+import com.pace.library.helper.DbConnector;
+
+public class BookDAO {
+	private Connection connection=null;
+	private Statement statement = null;
+	private PreparedStatement pstatement=null;
+	private ResultSet resultSet = null;
+	ArrayList<Book> bookList = null;
+	public static String bookQry = "select * from book";
+	/*********************Get books data**********************/
+	public ArrayList<Book> getBooks() throws ClassNotFoundException,SQLException{
+		//process to get the books from table into bookList:
+		//1.Get the book data  from table
+		//2.add each book to BookList.
+		//3.Return BookList
+		try {
+			//open the connection
+			connection = DbConnector.createConnection();
+			pstatement = connection.prepareStatement(bookQry);
+			//get the result
+			resultSet = pstatement.executeQuery();
+			Book book;
+			bookList = new ArrayList<Book>();
+			while(resultSet.next()) {
+				int bookId;
+				String bookName;
+				String author;
+				float price;
+				//declare the pojo
+				book = new Book();
+				//get the row details
+				bookId = resultSet.getInt(1);
+				bookName = resultSet.getString(2);
+				author = resultSet.getString(3);
+				price = resultSet.getFloat(4);
+				//Add this data to book bean
+				//set the pojo with retrieved values from the row
+				book.setBookId(bookId);
+				book.setBname(bookName);
+				book.setAuthor(author);
+				book.setPrice(price);
+			    //Add the book to booklist
+				bookList.add(book);
+				book = null;
+			}
+		}catch(SQLException sqlex) {
+			
+		}finally {
+			DbConnector.closeConnection();
+			}
+		return bookList;
+		}
+	/********************************Show list of books *****************************/
+	public void showBookList(ArrayList<Book> bookList2) {
+		System.out.println("In DAO layer");
+		for(Book book : bookList2) {
+			System.out.println(book.getBookId());
+			System.out.println("\t"+ book.getBname());
+			System.out.println("\t"+ book.getAuthor());
+			System.out.println("\t"+ book.getPrice());
+
+
+		}
+		
+	}
+	/*************************Inserting book data ********************************/
+	public void insertBookDetails(Book book) throws ClassNotFoundException,SQLException {
+		connection = DbConnector.createConnection();
+		String insQry = "insert into book values(?,?,?,?)";
+		pstatement = connection.prepareStatement(insQry);
+		pstatement.setInt(1, book.getBookId());
+		pstatement.setString(2, book.getBname());
+		pstatement.setString(3, book.getAuthor());
+		pstatement.setFloat(4, book.getPrice());
+		int rows = pstatement.executeUpdate();
+		System.out.println(rows + "Rows Inserted!");
+		DbConnector.closeConnection();
+	}
+	/*************************Deleting books**********************************************/
+	public boolean deleteBook(int id)throws SQLException, ClassNotFoundException{
+		pstatement = null;
+		//Scanner scnr = new Scanner(System.in);
+		connection = DbConnector.createConnection();
+		String delQry = "delete from book where id=?";
+		pstatement = connection.prepareStatement(delQry);
+		pstatement.setInt(1,  id);
+		int rows = pstatement.executeUpdate();
+		boolean isDelete = true;
+		if(rows != 0) {
+			isDelete = true;
+		}else {
+			isDelete = false;
+		}
+		DbConnector.closeConnection();
+		return isDelete;
+		}
+	public boolean updateBook(int id)throws SQLException, ClassNotFoundException{
+		pstatement = null;
+		connection = DbConnector.createConnection();
+		String updQry = "update  book set price =  price + price * 0.10 where id=?";
+		pstatement = connection.prepareStatement(updQry);
+		pstatement.setInt(1,  id);
+		int rows = pstatement.executeUpdate();
+		boolean isUpdate = true;
+		if(rows != 0) {
+			isUpdate = true;
+		}else {
+			isUpdate = false;
+		}
+		DbConnector.closeConnection();
+		return isUpdate;
+}
+	    /*public boolean updateBooksByPriceSlash() throws ClassNotFoundException, SQLException {
+	        try {
+	            connection = DbConnector.createConnection();
+	            String updateQry = "UPDATE book SET price = price * 0.6572 WHERE title = 'The Alchemist'";
+	            pstatement = connection.prepareStatement(updateQry);
+	            int rowsUpdated = pstatement.executeUpdate();
+	            System.out.println(rowsUpdated + " rows updated for 'The Alchemist'.");
+
+	            updateQry = "UPDATE book SET price = price * 0.968 WHERE title = 'Computer Networks'";
+	            pstatement = connection.prepareStatement(updateQry);
+	            rowsUpdated = pstatement.executeUpdate();
+	            System.out.println(rowsUpdated + " rows updated for 'Computer Networks'.");
+	            
+	            return true;
+	        } finally {
+	            DbConnector.closeConnection();
+	        }
+	    }
+
+	 */   // Other existing methods...
+	public boolean updateBooksByPriceSlashService() throws ClassNotFoundException, SQLException {
+	    statement = null;
+	    connection = DbConnector.createConnection();
+	    statement = connection.createStatement();
+	    	        String updateQry = 
+	    	        		"update book set price = case name  " +
+	                         "when 'The Alchemist' then price - price * (34.28 / 100) "  +
+	                         "when 'The Computer Networks' then price - price * (3.2 / 100) " +
+	                         "else price end " +
+	                         "where name in('Alchemist','Computer Networks')";
+	           	            int rows = pstatement.executeUpdate();
+	    boolean isUpdate = true;
+		if(rows != 0) {
+			isUpdate = true;
+		}else {
+			isUpdate = false;
+		}
+		DbConnector.closeConnection();
+		return isUpdate;
+}
+}

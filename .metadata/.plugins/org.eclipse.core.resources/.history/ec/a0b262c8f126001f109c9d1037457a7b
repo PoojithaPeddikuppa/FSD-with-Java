@@ -1,0 +1,5 @@
+package com.pace.springmvc.controller;
+@Controller
+public class LoginController {
+
+}

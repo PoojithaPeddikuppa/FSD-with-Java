@@ -1,0 +1,28 @@
+class Employee {
+    long employeeId;
+    String employeeName;
+    String employeeAddress;
+    long employeePhone;
+    double basicSalary;
+    double specialAllowance = 250.80;
+    double Hra = 1000.50;
+
+    public Employee(long employeeId, String employeeName, String employeeAddress,
+                    long employeePhone, double basicSalary) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.employeeAddress = employeeAddress;
+        this.employeePhone = employeePhone;
+        this.basicSalary = basicSalary;
+    }
+
+    public void displayDetails() {
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Employee Name: " + employeeName);
+        System.out.println("Employee Address: " + employeeAddress);
+        System.out.println("Employee Phone: " + employeePhone);
+        System.out.println("Basic Salary: Rs. " + basicSalary);
+        System.out.println("Special Allowance: Rs. " + specialAllowance);
+        System.out.println("HRA: Rs. " + Hra);
+    }
+}

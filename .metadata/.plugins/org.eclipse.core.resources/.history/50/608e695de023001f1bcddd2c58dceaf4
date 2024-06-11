@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="java.util.ArrayList,com.pace.library.bean.book"%> 
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+</head>
+<body>
+<%
+session.getAttribute("booklist");
+ArrayList<Book> bookList = new ArrayList<Book>();
+bookList = (ArrayList<Book>) session.getAttribute("booklist");
+%>
+
+</body>
+</html>

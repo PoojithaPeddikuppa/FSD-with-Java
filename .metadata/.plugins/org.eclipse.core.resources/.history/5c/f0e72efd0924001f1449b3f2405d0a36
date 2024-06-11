@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class ArithmeticExceptionHandling {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int dividend, divisor, quotient;
+
+        System.out.print("Enter the dividend: ");
+        dividend = scanner.nextInt();
+
+        while (true) {
+            System.out.print("Enter the divisor: ");
+            if (scanner.hasNextInt()) {
+                divisor = scanner.nextInt();
+                if (divisor != 0) {
+                    quotient = dividend / divisor;
+                    System.out.println("The quotient is: " + quotient);
+                    break; // Exit the loop if no exception occurs
+                } else {
+                    System.out.println("Error: Divisor cannot be zero. Please re-enter the divisor.");
+                }
+            } else {
+                System.out.println("Error: Please enter a valid integer for the divisor.");
+                scanner.next(); // Consume invalid input
+            }
+        }
+
+        scanner.close();
+    }
+}

@@ -1,0 +1,27 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArrayReverse {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+
+        int[] OA = new int[size];
+        for (int i = 0; i < size; i++) {
+            System.out.print("Enter element " + (i + 1) + ": ");
+            OA[i] = scanner.nextInt();
+        }
+
+        int[] shuffledArray = new int[OA.length];
+        for (int i = 0; i < OA.length; i++) {
+            shuffledArray[i] = OA[OA.length - 1 - i];
+        }
+
+        System.out.println("OA: " + Arrays.toString(OA));
+        System.out.println("SA(in reverse order): " + Arrays.toString(SA));
+
+        scanner.close();
+    }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;WebLayeredArchitecture/src/main/java/com/pace/library/dao/BookDao.java&apos; to &apos;BookDAO.java&apos;" description="Rename resource &apos;BookDao.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/pace/library/dao/BookDao.java" name="BookDAO.java" stamp="1718009522291" updateReferences="true"/>
+</session>

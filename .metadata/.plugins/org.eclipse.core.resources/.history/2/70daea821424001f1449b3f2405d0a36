@@ -1,0 +1,42 @@
+public class SeparateOddEvenArrays {
+    public static void main(String[] args) {
+        int[] original = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        int[] odd = new int[10];
+        int[] even = new int[10];
+
+        int oddIndex = 0;
+        int evenIndex = 0;
+
+        for (int i = 0; i < original.length; i++) {
+            if (original[i] % 2 == 0) {
+                even[evenIndex] = original[i];
+                evenIndex++;
+            } else {
+                odd[oddIndex] = original[i];
+                oddIndex++;
+            }
+        }
+
+        for (int i = oddIndex; i < 10; i++) {
+            odd[i] = 0;
+        }
+        for (int i = evenIndex; i < 10; i++) {
+            even[i] = 0;
+        }
+
+       
+        System.out.println("Original Array: ");
+        printArray(original);
+        System.out.println("\nOdd Array: ");
+        printArray(odd);
+        System.out.println("\nEven Array: ");
+        printArray(even);
+    }
+
+    public static void printArray(int[] arr) {
+        for (int value : arr) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+    }
+}
